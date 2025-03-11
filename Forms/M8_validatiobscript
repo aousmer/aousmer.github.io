@@ -1,0 +1,32 @@
+    
+ 
+// Retrieve the input field value
+const form = document.getElementById("myForm");
+const inputField = document.getElementById("inputField");
+const messageDiv = document.getElementById("message");
+
+// Regular expression pattern for alphanumeric input 
+const alphanumericPattern = /^[a-zA-Z0-9]+$/;
+
+
+form.addEventListener("submit", function (event) {
+
+  // Prevent the form from submitting
+  event.preventDefault();
+
+  // Retrieve the input value
+  const inputValue = inputField.value.trim();
+
+  // Check if the input value matches the alphanumeric pattern
+  if (alphanumericPattern.test(inputValue)) {
+
+    // Valid input: Display confirmation message and allow submission
+    messageDiv.textContent = "Input is valid!";
+    
+   
+  } else {
+    // Invalid input: Display error message
+    messageDiv.textContent = "Error Please enter alphanumeric values.";
+   
+  }
+});       
