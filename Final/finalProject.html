@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEB-115 Final Project</title>
+    <script src="projectJS.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Build Your Meal Plan</h1>
+        <p>Student Name: Ahmed Ousmer | Course: WEB-115 | Section: 0004</p>
+    </header>
+
+    <form id="mealForm">
+        <fieldset>
+            <legend>Personal Info</legend>
+            <label>Name: <input type="text" id="userName" required></label><br>
+            <label>Email: <input type="email" id="userEmail" required></label><br>
+            <label>Weekly Goal: <input type="text" id="userGoal"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Weekly Meal Plan</legend>
+            <div id="mealInputs">
+                
+                <script>
+                    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+                    const meals = ["Breakfast", "Snack1", "Lunch", "Snack2", "Dinner"];
+                    for (let day of days) {
+                        document.write(`<h3>${day}</h3>`);
+                        for (let meal of meals) {
+                            document.write(`<label>${meal}: <input type="text" id="${day}_${meal}"></label><br>`);
+                        }
+                    }
+                </script>
+            </div>
+        </fieldset>
+
+        <button type="button" onclick="displayMealPlan()">Display Meal Plan</button>
+        <button type="reset">Clear</button>
+        <button type="button" onclick="window.print()">Print</button>
+        
+    </form>
+</body>
+</html>
